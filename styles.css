@@ -1,0 +1,653 @@
+:root {
+  --bg: #f4f7f3;
+  --panel: #ffffff;
+  --ink: #162322;
+  --muted: #5d6f6d;
+  --line: #d9e2dd;
+  --teal: #0b5c5a;
+  --teal-2: #147a72;
+  --blue: #365d8d;
+  --coral: #c95245;
+  --amber: #aa6b17;
+  --green: #26734d;
+  --shadow: 0 18px 44px rgba(20, 43, 39, 0.12);
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.skip-link {
+  background: var(--ink);
+  color: white;
+  left: 1rem;
+  padding: 0.75rem 1rem;
+  position: fixed;
+  top: -5rem;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #102625;
+  color: #eef8f5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 100vh;
+  padding: 1.25rem;
+  position: sticky;
+  top: 0;
+}
+
+.brand-block {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #d7f2e9;
+  border-radius: 8px;
+  color: #102625;
+  display: grid;
+  font-weight: 800;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+}
+
+.brand-block h1,
+.section-heading h2,
+.panel h3 {
+  margin: 0;
+}
+
+.brand-block h1 {
+  font-size: 1.25rem;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+}
+
+.sidebar .eyebrow {
+  color: #a8c9c3;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.compact-field span {
+  color: #c7d8d4;
+}
+
+input,
+select {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  width: 100%;
+}
+
+.tabs {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  color: #d8e8e4;
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+.tab.is-active,
+.tab:hover {
+  background: #d7f2e9;
+  color: #102625;
+}
+
+.safety-note {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #dcebe7;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin-top: auto;
+  padding: 0.95rem;
+}
+
+.main {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.topbar {
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(12rem, 18rem) minmax(10rem, 1fr) auto;
+  min-height: 5rem;
+  padding: 1rem;
+}
+
+.score-line {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+#scoreValue {
+  color: var(--teal);
+  font-size: 2.25rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+#scoreBand {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.score-meter {
+  background: #dfe8e3;
+  border-radius: 999px;
+  height: 0.8rem;
+  overflow: hidden;
+}
+
+.score-meter div {
+  background: linear-gradient(90deg, var(--coral), #d59d2b, var(--teal-2));
+  height: 100%;
+  transition: width 240ms ease;
+}
+
+.primary-action,
+.secondary-action {
+  align-items: center;
+  border-radius: 8px;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+}
+
+.primary-action {
+  background: var(--teal);
+  border: 1px solid var(--teal);
+  color: white;
+}
+
+.secondary-action {
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--teal);
+}
+
+.primary-action:hover,
+.secondary-action:hover {
+  filter: brightness(0.96);
+}
+
+.view {
+  display: none;
+}
+
+.view.is-visible {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-heading {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.section-heading h2 {
+  font-size: 1.7rem;
+}
+
+.dashboard-grid,
+.assessment-grid,
+.progress-layout,
+.coach-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+.panel h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.score-panel {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-column: span 2;
+  grid-template-columns: 11rem minmax(0, 1fr);
+}
+
+.ring-wrap {
+  display: grid;
+  place-items: center;
+}
+
+.score-ring {
+  --score: 0deg;
+  align-items: center;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle at center, white 0 58%, transparent 59%),
+    conic-gradient(var(--teal) var(--score), #e3ebe7 0);
+  border-radius: 50%;
+  display: grid;
+  font-size: 2.25rem;
+  font-weight: 850;
+  justify-content: center;
+  width: min(9rem, 100%);
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.mini-stats,
+.wearable-grid,
+.change-list {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1rem 0 0;
+}
+
+.mini-stats div,
+.wearable-grid div,
+.change-list div {
+  background: #f4f7f3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.85rem;
+}
+
+dt,
+dd {
+  margin: 0;
+}
+
+dt,
+.wearable-grid small {
+  color: var(--muted);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+dd,
+.wearable-grid span {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 850;
+  margin-top: 0.25rem;
+}
+
+.wearable-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.focus-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.focus-list div {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 0.65rem;
+}
+
+.focus-list div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.focus-list span {
+  color: var(--muted);
+}
+
+.alert-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.alert {
+  border: 1px solid var(--line);
+  border-left: 0.45rem solid var(--blue);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+}
+
+.alert.success {
+  border-left-color: var(--green);
+  background: #eef8f1;
+}
+
+.alert.warning {
+  border-left-color: var(--amber);
+  background: #fff8e8;
+}
+
+.alert.danger {
+  border-left-color: var(--coral);
+  background: #fff0ef;
+}
+
+.alert.info {
+  background: #eef4fb;
+}
+
+.alert span {
+  color: var(--muted);
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.check-row {
+  align-items: start;
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: 0.85rem;
+}
+
+.check-row input {
+  height: 1.25rem;
+  min-height: auto;
+  width: 1.25rem;
+}
+
+.test-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.manual-tools {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+#timerReadout {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.pill {
+  background: #e5f1ef;
+  border: 1px solid #bfd9d3;
+  border-radius: 999px;
+  color: var(--teal);
+  font-weight: 850;
+  padding: 0.5rem 0.8rem;
+}
+
+.workout-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workout-intro {
+  background: #eaf5f1;
+  border-color: #bedbd4;
+  grid-column: span 3;
+}
+
+.exercise-card {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 12rem;
+}
+
+.exercise-kicker {
+  color: var(--blue);
+  font-weight: 850;
+}
+
+.bar-chart {
+  align-items: end;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  height: 18rem;
+  padding-top: 1rem;
+}
+
+.bar-item {
+  align-items: center;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100%;
+  justify-items: center;
+}
+
+.bar-item span {
+  font-weight: 850;
+}
+
+.bar-item div {
+  align-self: end;
+  background: linear-gradient(180deg, var(--teal-2), var(--blue));
+  border-radius: 8px 8px 0 0;
+  min-height: 0.75rem;
+  width: min(4rem, 70%);
+}
+
+.bar-item small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.change-list {
+  grid-template-columns: 1fr;
+}
+
+.coach-grid {
+  grid-template-columns: 2fr 1fr;
+}
+
+.coach-copy {
+  color: #334541;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.toast {
+  background: #102625;
+  border-radius: 8px;
+  bottom: 1rem;
+  box-shadow: var(--shadow);
+  color: white;
+  left: 50%;
+  opacity: 0;
+  padding: 0.85rem 1rem;
+  pointer-events: none;
+  position: fixed;
+  transform: translate(-50%, 1rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 30;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+:focus-visible {
+  outline: 3px solid #f1b34b;
+  outline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+    position: static;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .tab {
+    text-align: center;
+  }
+
+  .topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid,
+  .assessment-grid,
+  .progress-layout,
+  .coach-grid,
+  .workout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-panel,
+  .span-2,
+  .workout-intro {
+    grid-column: auto;
+  }
+
+  .test-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .main,
+  .sidebar {
+    padding: 0.85rem;
+  }
+
+  .brand-block {
+    align-items: start;
+  }
+
+  .tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .score-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-stats,
+  .wearable-grid,
+  .test-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bar-chart {
+    height: 14rem;
+  }
+}

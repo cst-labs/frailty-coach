@@ -1,0 +1,9 @@
+{
+  "name": "Frailty Coach",
+  "short_name": "Frailty Coach",
+  "description": "Guided function checks and adaptive exercise plans for healthy aging.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f3",
+  "theme_color": "#0b5c5a"
+}

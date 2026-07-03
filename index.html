@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b5c5a" />
+    <title>Frailty Coach</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Frailty Coach navigation">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true">FC</div>
+          <div>
+            <p class="eyebrow">Wellness self-monitoring</p>
+            <h1>Frailty Coach</h1>
+          </div>
+        </div>
+
+        <label class="field compact-field" for="personaSelect">
+          <span>Demo persona</span>
+          <select id="personaSelect"></select>
+        </label>
+
+        <nav class="tabs" aria-label="Primary">
+          <button class="tab is-active" data-view="today" type="button">Today</button>
+          <button class="tab" data-view="assess" type="button">Assess</button>
+          <button class="tab" data-view="plan" type="button">Workout</button>
+          <button class="tab" data-view="progress" type="button">Progress</button>
+          <button class="tab" data-view="coach" type="button">Coach</button>
+        </nav>
+
+        <div class="safety-note">
+          <strong>Not a diagnosis.</strong>
+          Stop exercise for chest pain, faintness, severe breathlessness, new weakness, or sharp pain.
+        </div>
+      </aside>
+
+      <main id="main" class="main" tabindex="-1">
+        <section class="topbar" aria-label="Current score summary">
+          <div>
+            <p class="eyebrow">Function Resilience Score</p>
+            <div class="score-line">
+              <span id="scoreValue">--</span>
+              <span id="scoreBand">Loading</span>
+            </div>
+          </div>
+          <div class="score-meter" aria-hidden="true">
+            <div id="scoreFill"></div>
+          </div>
+          <button id="demoProgressBtn" class="primary-action" type="button">Run 4-week demo</button>
+        </section>
+
+        <section id="view-today" class="view is-visible" aria-labelledby="todayTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Daily plan</p>
+              <h2 id="todayTitle">Today</h2>
+            </div>
+            <button id="completeWorkoutBtn" class="secondary-action" type="button">Complete workout</button>
+          </div>
+
+          <div id="alerts" class="alert-stack" aria-live="polite"></div>
+
+          <div class="dashboard-grid">
+            <article class="panel score-panel">
+              <div class="ring-wrap">
+                <div id="scoreRing" class="score-ring" role="img" aria-label="Function score">
+                  <span id="ringValue">--</span>
+                </div>
+              </div>
+              <div>
+                <h3 id="scoreTitle">Current function</h3>
+                <p id="scoreExplanation" class="muted"></p>
+                <dl class="mini-stats">
+                  <div><dt>TUG</dt><dd id="statTug">--</dd></div>
+                  <div><dt>Chair stands</dt><dd id="statChair">--</dd></div>
+                  <div><dt>Balance</dt><dd id="statBalance">--</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Wearable signal</h3>
+              <div class="wearable-grid">
+                <div><span id="stepsMetric">--</span><small>steps</small></div>
+                <div><span id="activeMetric">--</span><small>active min</small></div>
+                <div><span id="sleepMetric">--</span><small>sleep</small></div>
+                <div><span id="rhrMetric">--</span><small>resting HR</small></div>
+              </div>
+              <p id="wearableInsight" class="muted"></p>
+            </article>
+
+            <article class="panel">
+              <h3>Today's focus</h3>
+              <div id="todayFocus" class="focus-list"></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-assess" class="view" aria-labelledby="assessTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Guided assessment</p>
+              <h2 id="assessTitle">Update function checks</h2>
+            </div>
+            <button id="saveAssessmentBtn" class="primary-action" type="button">Save assessment</button>
+          </div>
+
+          <div class="assessment-grid">
+            <article class="panel">
+              <h3>Safety screen</h3>
+              <div id="safetyChecks" class="check-list"></div>
+            </article>
+
+            <article class="panel">
+              <h3>Fall-risk screen</h3>
+              <div id="fallChecks" class="check-list"></div>
+            </article>
+
+            <article class="panel span-2">
+              <h3>Functional tests</h3>
+              <div class="test-grid">
+                <label class="field" for="tugInput">
+                  <span>Timed Up and Go, seconds</span>
+                  <input id="tugInput" type="number" min="4" max="60" step="0.1" />
+                </label>
+                <label class="field" for="chairInput">
+                  <span>30-second chair stands</span>
+                  <input id="chairInput" type="number" min="0" max="40" step="1" />
+                </label>
+                <label class="field" for="balanceStageInput">
+                  <span>Highest balance stage</span>
+                  <select id="balanceStageInput">
+                    <option value="1">1 - feet together</option>
+                    <option value="2">2 - semi-tandem</option>
+                    <option value="3">3 - tandem</option>
+                    <option value="4">4 - single-leg</option>
+                  </select>
+                </label>
+                <label class="field" for="balanceSecondsInput">
+                  <span>Balance hold, seconds</span>
+                  <input id="balanceSecondsInput" type="number" min="0" max="30" step="1" />
+                </label>
+                <label class="field" for="gaitInput">
+                  <span>Optional 4m gait speed, m/s</span>
+                  <input id="gaitInput" type="number" min="0.1" max="2.4" step="0.05" />
+                </label>
+                <label class="field" for="confidenceInput">
+                  <span>Measurement confidence</span>
+                  <select id="confidenceInput">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                </label>
+              </div>
+              <div class="manual-tools">
+                <button id="startTimerBtn" class="secondary-action" type="button">Start TUG timer</button>
+                <button id="stopTimerBtn" class="secondary-action" type="button">Stop timer</button>
+                <button id="addRepBtn" class="secondary-action" type="button">Add chair rep</button>
+                <span id="timerReadout" aria-live="polite">Timer ready</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-plan" class="view" aria-labelledby="planTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Adaptive workout</p>
+              <h2 id="planTitle">Workout prescription</h2>
+            </div>
+            <span id="planLevel" class="pill"></span>
+          </div>
+          <div id="workoutPlan" class="workout-grid"></div>
+        </section>
+
+        <section id="view-progress" class="view" aria-labelledby="progressTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Trend review</p>
+              <h2 id="progressTitle">Four-week progress</h2>
+            </div>
+            <button id="resetPersonaBtn" class="secondary-action" type="button">Reset persona</button>
+          </div>
+          <div class="progress-layout">
+            <article class="panel span-2">
+              <h3>Score trend</h3>
+              <div id="scoreChart" class="bar-chart" aria-label="Weekly function score trend"></div>
+            </article>
+            <article class="panel">
+              <h3>Functional change</h3>
+              <dl id="changeList" class="change-list"></dl>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-coach" class="view" aria-labelledby="coachTitle">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Coach summary</p>
+              <h2 id="coachTitle">Plain-language guidance</h2>
+            </div>
+            <button id="copySummaryBtn" class="secondary-action" type="button">Copy summary</button>
+          </div>
+          <div class="coach-grid">
+            <article class="panel span-2">
+              <h3>For the elder</h3>
+              <p id="elderSummary" class="coach-copy"></p>
+            </article>
+            <article class="panel">
+              <h3>For caregiver or PT</h3>
+              <p id="caregiverSummary" class="coach-copy"></p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
