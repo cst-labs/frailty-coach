@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0b5c5a" />
     <title>Frailty Coach</title>
     <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="stylesheet" href="./styles.css?v=6" />
+    <link rel="stylesheet" href="./styles.css?v=7" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -31,6 +31,7 @@
         <div class="safety-note">
           <strong>Not a diagnosis.</strong>
           Stop exercise for chest pain, faintness, severe breathlessness, new weakness, or sharp pain.
+          <button id="evidenceLinkBtn" class="text-link" type="button">Evidence basis</button>
         </div>
             </aside>
 
@@ -244,6 +245,33 @@
               <h3>For caregiver or PT</h3>
               <p id="caregiverSummary" class="coach-copy"></p>
             </article>
+            <details id="evidenceSources" class="panel evidence-panel span-2">
+              <summary>
+                <span>Evidence & Sources</span>
+                <small>What this app is based on</small>
+              </summary>
+              <div class="evidence-content">
+                <p>
+                  Frailty Coach uses validated assessment domains and evidence-informed exercise categories. The 0-100 Function Resilience Score is a wellness coaching composite, not a validated diagnostic frailty score.
+                </p>
+                <div class="source-group">
+                  <h3>Fall-risk screening and functional assessments</h3>
+                  <p>CDC STEADI: yearly fall-risk screen, Timed Up and Go, 30-second chair stand, and 4-stage balance test.</p>
+                  <a href="https://www.cdc.gov/steadi/hcp/clinical-resources/index.html" target="_blank" rel="noreferrer">CDC STEADI clinical resources</a>
+                </div>
+                <div class="source-group">
+                  <h3>Exercise levels and prescription</h3>
+                  <p>Vivifrail functional levels and multicomponent exercise framing; USPSTF guidance on exercise interventions for older adults at increased fall risk.</p>
+                  <a href="https://vivifrail.com/resources/" target="_blank" rel="noreferrer">Vivifrail resources</a>
+                  <a href="https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/falls-prevention-community-dwelling-older-adults-interventions" target="_blank" rel="noreferrer">USPSTF falls prevention recommendation</a>
+                </div>
+                <div class="source-group">
+                  <h3>Frailty framing</h3>
+                  <p>Clinical Frailty Scale, frailty phenotype, and frailty index informed the app language, but the app does not reproduce or claim to replace those clinical tools.</p>
+                  <a href="https://www.dal.ca/sites/gmr/our-tools/clinical-frailty-scale.html" target="_blank" rel="noreferrer">Dalhousie Clinical Frailty Scale</a>
+                </div>
+              </div>
+            </details>
           </div>
         </section>
             </main>
@@ -275,6 +303,6 @@
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./src/app.js?v=6"></script>
+    <script type="module" src="./src/app.js?v=7"></script>
   </body>
 </html>

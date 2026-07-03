@@ -42,6 +42,7 @@ function bindEvents() {
   });
 
   $("#startCheckBtn").addEventListener("click", () => showView("assess"));
+  $("#evidenceLinkBtn").addEventListener("click", () => showEvidenceSources());
 
   $("#saveAssessmentBtn").addEventListener("click", () => {
     readAssessmentForm();
@@ -320,6 +321,13 @@ function showView(view) {
   $$(".view").forEach((panel) => panel.classList.toggle("is-visible", panel.id === `view-${view}`));
   $("#main").focus({ preventScroll: true });
   $(".phone-screen")?.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showEvidenceSources() {
+  showView("coach");
+  const evidence = $("#evidenceSources");
+  evidence.open = true;
+  requestAnimationFrame(() => evidence.scrollIntoView({ behavior: "smooth", block: "start" }));
 }
 
 function loadState() {
