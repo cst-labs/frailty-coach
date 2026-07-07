@@ -8,6 +8,13 @@ This project currently uses cache-busting app URLs such as `?v=65`; those are bu
 
 - Add future changes here before or during implementation.
 
+## 2026-07-08 - Hackathon README Alignment
+
+### Changed
+
+- Updated README positioning for the Codex for Healthcare: From Prototype to Production hackathon.
+- Added Healthy Longevity theme alignment, problem framing, solution loop, implemented scope, and prototype boundaries.
+
 ## 2026-07-08 - Flexible Assessment Timing
 
 ### Changed

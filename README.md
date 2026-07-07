@@ -1,12 +1,56 @@
 # Frailty Coach
 
-Frailty Coach is a mobile-first wellness app that helps older adults safely assess physical resilience, understand frailty and fall-risk signals, and follow adaptive exercise plans that improve strength, balance, and mobility over time.
+Frailty Coach is a mobile-first wellness app that helps older adults monitor physical resilience, understand frailty and fall-risk signals, and follow adaptive daily exercise plans that improve strength, balance, mobility, and confidence over time.
 
-The app is designed for the Healthy Longevity hackathon theme, especially **Physical health and frailty** and **Longevity data and insights**. It is not a diagnostic or regulated medical-device implementation. It presents a wellness-oriented coaching layer with safety prompts and clinician/caregiver escalation cues.
+It is built for the [Codex for Healthcare: From Prototype to Production](https://luma.com/6s8sbqep) hackathon under the **Healthy Longevity** theme. The strongest alignment is with **Physical health and frailty**, **Care for older adults**, **Longevity data and insights**, **Preventive care and early intervention**, and **Patient engagement**.
+
+Frailty Coach is not a diagnostic or regulated medical-device implementation. It is a wellness-oriented coaching prototype with safety prompts, evidence-informed functional domains, and clinician/caregiver escalation cues.
+
+## Hackathon Submission
+
+| Field | Submission summary |
+| --- | --- |
+| **Event** | [Codex for Healthcare: From Prototype to Production](https://luma.com/6s8sbqep) |
+| **Theme** | Healthy Longevity |
+| **Primary health domain** | Physical health and frailty |
+| **Secondary domains** | Care for older adults; patient engagement; preventive care and early intervention; longevity data and insights |
+| **Target users** | Older adults who want to stay steady and independent; caregivers, physiotherapists, and community health teams supporting them |
+| **Prototype URL** | https://cst-labs.github.io/frailty-coach/ |
+| **Presenter mode** | https://cst-labs.github.io/frailty-coach/?demo=1 |
+| **Current status** | High-fidelity static web prototype with deterministic seeded scenarios, in-memory demo state, and GitHub Pages deployment |
+
+## Problem
+
+Frailty risk often becomes visible only after a fall, hospitalisation, or loss of independence. Many older adults know they should stay active, but they may not know what movements are safe, whether they are improving, or when to ask for support.
+
+Clinical functional checks such as Timed Up and Go (TUG), chair stands, balance testing, and gait speed are useful, but they are not normally translated into a simple daily habit. Wearable and lifestyle signals can also be hard to interpret without a clear next action.
+
+## Solution
+
+Frailty Coach turns periodic functional check-ins into a daily movement loop:
+
+1. **Assess periodically** using simple, guided checks for safety, fall risk, TUG, chair stands, balance, optional gait speed, and confidence.
+2. **Generate a safe daily plan** based on the latest function score, fall-risk signals, recovery, and activity data.
+3. **Guide the workout** with clear setup, action, rest, pause, and stop-if-unwell states.
+4. **Track progress** using irregular assessment points over the last 3 months, not a rigid weekly-only chart.
+5. **Explain what changed** in plain language for the older adult and, optionally, a caregiver.
+
+The product goal is not to replace clinical judgement. It is to make healthy-ageing behaviours easier to understand, safer to perform, and more likely to become a daily habit.
+
+## Hackathon Theme Alignment
+
+| Hackathon direction | How Frailty Coach addresses it |
+| --- | --- |
+| **Preventive care and early intervention** | Screens for fall-risk signals and guides low-risk daily movement before decline becomes a crisis. |
+| **Patient engagement** | Prioritises one clear daily action, plain-language score interpretation, encouragement after completion, and caregiver-friendly summaries. |
+| **Longevity data and insights** | Combines functional checks, fall-risk answers, wearable-style activity, sleep, heart-rate recovery, and adherence into actionable coaching. |
+| **Healthy ageing assistants** | Provides an app-like companion that explains what to do today, when to reassess, and how to adapt movement safely. |
+| **Care for older adults** | Designs around safety, independence, support needs, caregiver visibility, and an elder-friendly interface. |
+| **Physical health and frailty** | Focuses directly on mobility, leg strength, balance, gait, activity, recovery, and fall-risk precautions. |
 
 ## One-Sentence Pitch
 
-Frailty Coach helps older adults safely assess their physical resilience, understand frailty and fall-risk signals, and follow adaptive exercise plans that improve strength, balance, and mobility over time.
+Frailty Coach helps older adults turn frailty and fall-risk monitoring into a simple daily loop: check function periodically, move safely every day, and understand progress without needing a clinician beside them for every step.
 
 ## Key Features
 
@@ -24,6 +68,22 @@ Frailty Coach helps older adults safely assess their physical resilience, unders
 - **Evidence & Sources section**: compact source panel explaining the clinical and scientific basis behind the assessments and workouts.
 - **Presentation-safe default mode**: hides demo mechanics so the app can be presented as a close-to-real patient/caregiver experience.
 - **Presenter controls**: optional hidden controls for switching scenarios, simulating four weeks of progress, and resetting the current scenario.
+
+## What Is Implemented
+
+- Fully navigable mobile-first app with Today, Assess, Workout, Progress, and Coach screens.
+- Four fixed presenter scenarios spanning frail/fall-risk, pre-frail, robust, and advanced users.
+- Flexible assessment timing: weekly is suggested, but users can save an assessment anytime.
+- Dated assessment history for Progress, including irregular points over the last 3 months.
+- Workout session flow with active exercise counters, set completion, rest timers, pause/resume, stop-if-unwell, and completion state.
+- GitHub Pages deployment through GitHub Actions.
+
+## Prototype Boundaries
+
+- Uses deterministic seeded profiles and in-memory session state rather than user accounts or a backend database.
+- Uses wearable-style mock data rather than a live wearable integration.
+- Provides wellness coaching only; it does not diagnose frailty, prescribe medical rehabilitation, or replace clinical assessment.
+- The Function Resilience Score is a product composite for coaching and visualisation, not a validated diagnostic frailty instrument.
 
 ## Daily Use Model
 
