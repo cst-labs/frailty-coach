@@ -112,30 +112,6 @@ The individual assessment domains and exercise categories are evidence-informed.
 
 The `Function Resilience Score` is a product composite for coaching and visualization. It should be described as a wellness score based on validated domains, not as a validated diagnostic frailty score.
 
-## Visual Design
-
-The current app targets the **Frailty Coach v2** boards in `design/mockups/frailty-coach-v2/`. These are the source of truth for the simplified daily-use direction: a clearer Today screen, guided assessment, workout-session flow, progressive detail disclosure, and quiet presenter tooling.
-
-The earlier **Guided Companion** concept directions remain in `design/mockups/frailty-coach-2026-07-06/` for historical reference.
-
-Generated app assets live in `assets/illustrations/`:
-
-- `coach-avatar.png`
-- `coach-avatar-female-east-asian.png`
-- `coach-avatar-male-east-asian.png`
-- `progress-success.png`
-- `supported-sit-to-stand.png`
-- `weight-shifts.png`
-- `wall-pushups.png`
-- `hallway-walk.png`
-- `male-progress-success.png`
-- `male-supported-sit-to-stand.png`
-- `male-weight-shifts.png`
-- `male-wall-pushups.png`
-- `male-hallway-walk.png`
-
-These are project assets used by the app, not just design references. Keep future exercise artwork consistent with this style: warm ivory background, deep green clothing/actions, soft home setting, rounded digital-health illustration, and no diagnostic claims inside the image.
-
 ## Presenter Scenarios
 
 Presenter mode includes four seeded scenarios. They are not real patients; they are deterministic profiles chosen to show how the app adapts across the frailty and physical-resilience spectrum.
