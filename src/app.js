@@ -6,8 +6,8 @@ import {
   getWorkoutPlan,
   isWorkoutCompleteToday,
   makeHistoryWithCurrent
-} from "./logic.js?v=60";
-import { fallQuestions, personas, safetyQuestions } from "./data.js?v=60";
+} from "./logic.js?v=61";
+import { fallQuestions, personas, safetyQuestions } from "./data.js?v=61";
 
 const AVATAR_STORAGE_KEY = "frailty-coach-avatar-preference-v1";
 const ASSET_SETS = {

@@ -12,7 +12,7 @@ Frailty Coach helps older adults safely assess their physical resilience, unders
 
 - **Function Resilience Score**: a simple 0-100 wellness score summarizing mobility, strength, balance, activity, recovery, and fall-risk signals.
 - **Score interpretation and breakdown**: explains the 0-100 score in plain language, gives encouragement, and shows which domains are pulling the score up or down.
-- **Guided frailty and fall-risk checks**: safety screen, fall-risk questions, Timed Up and Go, chair stands, balance stage, gait speed, and measurement confidence.
+- **Guided frailty and fall-risk checks**: safety screen, fall-risk questions, Timed Up and Go (TUG), chair stands, balance stage, gait speed, and measurement confidence.
 - **Adaptive daily workout sessions**: a simple overview leads into a guided exercise session with setup, action, rest, and safety cues.
 - **Guided Companion visual design**: a warm elder-friendly interface with deep green navigation, ivory surfaces, large controls, and app-ready wellness illustrations.
 - **Coach avatar preference**: users can choose a female or male East Asian coach avatar, with the selected visual style applied to the hero and workout artwork.
@@ -47,7 +47,7 @@ The intended loop is:
 
 ## Scientific Positioning
 
-The individual assessment domains and exercise categories are evidence-informed. The app draws from CDC STEADI-style fall-risk screening, functional measures such as Timed Up and Go, chair stands, balance testing, Vivifrail-style exercise levels, and broader older-adult exercise guidance.
+The individual assessment domains and exercise categories are evidence-informed. The app draws from CDC STEADI-style fall-risk screening, functional measures such as Timed Up and Go (TUG), chair stands, balance testing, Vivifrail-style exercise levels, and broader older-adult exercise guidance.
 
 The `Function Resilience Score` is a product composite for coaching and visualization. It should be described as a wellness score based on validated domains, not as a validated diagnostic frailty score.
 
@@ -110,7 +110,7 @@ npm start
 Then open the normal audience-facing app:
 
 ```text
-http://localhost:5173/?v=60
+http://localhost:5173/?v=61
 ```
 
 This mode hides demo controls and starts as a realistic enrolled-user experience.
@@ -145,7 +145,7 @@ Frailty Coach has two presentation modes:
 Use this for the polished app walkthrough:
 
 ```text
-http://localhost:5173/?v=60
+http://localhost:5173/?v=61
 ```
 
 Normal mode hides:
@@ -161,7 +161,7 @@ The app still uses deterministic seeded data for the MVP, but the UI does not ex
 Use this when you need live demo controls:
 
 ```text
-http://localhost:5173/?demo=1&v=60
+http://localhost:5173/?demo=1&v=61
 ```
 
 Presenter mode shows a **Presenter controls** panel in the sidebar with:
@@ -180,9 +180,9 @@ This toggles Presenter controls on or off without changing the URL. Use this dur
 
 ### Suggested Demo Flow
 
-1. Start at `http://localhost:5173/?v=60` for the audience-facing walkthrough.
+1. Start at `http://localhost:5173/?v=61` for the audience-facing walkthrough.
 2. Show Today, Assess, Workout, Progress, and Coach as the real app experience.
-3. Press `Shift + D` or switch to `http://localhost:5173/?demo=1&v=60` when you need presenter tools.
+3. Press `Shift + D` or switch to `http://localhost:5173/?demo=1&v=61` when you need presenter tools.
 4. Choose a scenario if needed.
 5. Select **Simulate 4 weeks** to show improvement over time.
 6. Use **Reset scenario** before rehearsing or starting the next demo.

@@ -2,11 +2,18 @@
 
 All notable product, design, and implementation changes to Frailty Coach are tracked here.
 
-This project currently uses cache-busting app URLs such as `?v=60`; those are build/demo references, not semantic release versions.
+This project currently uses cache-busting app URLs such as `?v=61`; those are build/demo references, not semantic release versions.
 
 ## Unreleased
 
 - Add future changes here before or during implementation.
+
+## 2026-07-08 - Assessment TUG Label
+
+### Changed
+
+- Renamed the assessment title **Timed Up and Go** to **Timed Up and Go (TUG)** for clarity.
+- Bumped the running demo reference to `?v=61`.
 
 ## 2026-07-07 - Score More Info Modal
 
