@@ -695,8 +695,28 @@
   background: #f3f8f0 !important;
   border: 1px solid #dce9d8 !important;
   border-radius: 8px !important;
-  gap: 0 !important;
+  gap: 0.16rem !important;
   overflow: hidden !important;
+  padding-top: 0.72rem !important;
+}
+
+.phone-screen .app-shell[data-view="assess"] .setup-checks strong,
+.phone-screen .app-shell[data-view="assess"] .setup-checks small {
+  padding-inline: 0.82rem !important;
+}
+
+.phone-screen .app-shell[data-view="assess"] .setup-checks strong {
+  color: var(--teal);
+  font-size: 0.92rem;
+  line-height: 1.15;
+}
+
+.phone-screen .app-shell[data-view="assess"] .setup-checks small {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  line-height: 1.25;
+  padding-bottom: 0.42rem !important;
 }
 
 .phone-screen .app-shell[data-view="assess"] .setup-checks span {
@@ -4264,8 +4284,13 @@ body {
 }
 
 .status-row span,
-.support-note {
+.support-note > span {
   color: var(--muted);
+}
+
+.support-note > strong {
+  color: var(--ink);
+  font-weight: 850;
 }
 
 .workout-control-actions {

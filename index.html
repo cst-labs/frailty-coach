@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0b5c5a" />
     <title>Frailty Coach</title>
     <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="stylesheet" href="./styles.css?v=62" />
+    <link rel="stylesheet" href="./styles.css?v=63" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -168,7 +168,7 @@
                     <h3>Fall risk</h3>
                     <p class="muted">Answer a few questions about falls, steadiness, and support.</p>
                     <div id="fallChecks" class="check-list"></div>
-                    <div class="support-note">Use support nearby if any answer is yes.</div>
+                    <div class="support-note"><strong>If any answer is yes</strong><span>Keep support nearby during standing or walking checks.</span></div>
                   </article>
 
                   <article class="panel assessment-panel assessment-step-panel" data-assessment-panel="walk">
@@ -180,7 +180,9 @@
                       <button id="startTimerBtn" class="primary-action timer-primary" type="button">Start timer</button>
                       <button id="stopTimerBtn" class="secondary-action" type="button">Stop timer</button>
                     </div>
-                    <div class="setup-checks" aria-label="Setup checks">
+                    <div class="setup-checks" aria-label="TUG setup checklist">
+                      <strong>Before you start</strong>
+                      <small>Check these before starting the timer.</small>
                       <span>Stable chair</span>
                       <span>Clear walking path</span>
                       <span>Support nearby</span>
@@ -240,7 +242,7 @@
                         <small>Leave blank if you did not measure walking speed.</small>
                       </label>
                     </div>
-                    <div class="support-note">Keep support within reach.</div>
+                    <div class="support-note"><strong>For balance checks</strong><span>Keep support within reach.</span></div>
                   </article>
 
                   <article class="panel assessment-panel assessment-step-panel" data-assessment-panel="save">
@@ -459,6 +461,6 @@
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./src/app.js?v=62"></script>
+    <script type="module" src="./src/app.js?v=63"></script>
   </body>
 </html>

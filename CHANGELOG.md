@@ -2,11 +2,20 @@
 
 All notable product, design, and implementation changes to Frailty Coach are tracked here.
 
-This project currently uses cache-busting app URLs such as `?v=62`; those are build/demo references, not semantic release versions.
+This project currently uses cache-busting app URLs such as `?v=63`; those are build/demo references, not semantic release versions.
 
 ## Unreleased
 
 - Add future changes here before or during implementation.
+
+## 2026-07-08 - Safety Copy Clarity Pass
+
+### Changed
+
+- Added **Before you start** context to the TUG setup checklist so users know why stable chair, clear path, and support nearby are shown.
+- Clarified similar safety notes in Fall risk, Balance, Workout overview, active exercise, and paused workout states.
+- Renamed the progress action **Do easy plan** to **Do today's easy plan**.
+- Bumped the running demo reference to `?v=63`.
 
 ## 2026-07-08 - Working Header Back Button
 

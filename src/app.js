@@ -6,8 +6,8 @@ import {
   getWorkoutPlan,
   isWorkoutCompleteToday,
   makeHistoryWithCurrent
-} from "./logic.js?v=62";
-import { fallQuestions, personas, safetyQuestions } from "./data.js?v=62";
+} from "./logic.js?v=63";
+import { fallQuestions, personas, safetyQuestions } from "./data.js?v=63";
 
 const AVATAR_STORAGE_KEY = "frailty-coach-avatar-preference-v1";
 const ASSET_SETS = {
@@ -565,7 +565,7 @@ function renderWorkoutOverview(plan) {
       </div>
       <button id="startWorkoutSessionBtn" class="primary-action full-action" type="button">Start workout</button>
       <button id="makeWorkoutEasierBtn" class="text-link inline-link" type="button">Make easier</button>
-      <div class="support-note">Use support nearby.</div>
+      <div class="support-note"><strong>Safety reminder</strong><span>Use support nearby.</span></div>
     </article>
   `;
   $("#startWorkoutSessionBtn").addEventListener("click", () => setWorkoutMode("active", 0));
@@ -605,7 +605,7 @@ function renderWorkoutActive(plan) {
         <button id="markRepBtn" class="primary-action" type="button" ${repsComplete ? "disabled" : ""}>${actionLabel}</button>
         <button id="completeRepsBtn" class="secondary-action" type="button" ${repsComplete ? "disabled" : ""}>${dose.sets > 1 ? "Set complete" : "Reps complete"}</button>
       </div>
-      <div class="support-note">Move slowly. Rest any time.</div>
+      <div class="support-note"><strong>During this exercise</strong><span>Move slowly. Rest any time.</span></div>
       ${workoutControlActions()}
       <button id="resetRepCounterBtn" class="text-link inline-link reset-counter" type="button">Reset counter</button>
     </article>
@@ -687,7 +687,7 @@ function renderWorkoutPaused(plan) {
       </div>
       <button id="resumeWorkoutBtn" class="primary-action full-action" type="button">Resume workout</button>
       <button id="stopPausedWorkoutBtn" class="secondary-action full-action" type="button">Stop workout today</button>
-      <div class="support-note">If you feel unwell, rest and contact your health professional if symptoms continue.</div>
+      <div class="support-note"><strong>If you feel unwell</strong><span>Rest and contact your health professional if symptoms continue.</span></div>
     </article>
   `;
   $("#resumeWorkoutBtn").addEventListener("click", resumeWorkout);
@@ -952,7 +952,7 @@ function renderProgressInsight(history, score, plan) {
         <div><span>Focus</span><strong>${labelDomainTitle(weakest[0])}</strong><small>Today's priority</small></div>
       </div>
     </div>
-    <button class="secondary-action story-action" type="button" data-view-target="plan">${plan.deload ? "Do easy plan" : "Do today's plan"}</button>
+    <button class="secondary-action story-action" type="button" data-view-target="plan">${plan.deload ? "Do today's easy plan" : "Do today's plan"}</button>
   `;
   $("#progressInsight .story-action").addEventListener("click", () => showView("plan"));
 }
